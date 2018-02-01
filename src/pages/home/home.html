@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      File Open
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <button ion-button (click)="viewPdf()">Download pdf</button>
+ <ion-searchbar  (ionInput)="filterEmployeeLists($event)">
+  </ion-searchbar>
+<div>
+    <ion-grid class="client">
+        <ion-row wrap class="gridHeading">
+          <ion-col col-7 class="gridHeading" align="center">EMPLOYEE</ion-col>
+          <ion-col col-5 class="gridHeading" align="center">MOBILE</ion-col>
+        </ion-row>
+        <ion-row wrap class="gridCol" *ngFor="let employee of employees">
+         <ion-col col-7 class="gridCol"  >{{ employee.FirstName + " " + employee.LastName }}</ion-col>
+          <ion-col col-5 class="gridCol" ><ion-icon name="call"></ion-icon> {{ employee.Mobile }}</ion-col>
+        </ion-row>
+    </ion-grid>
+</div>
+<!--div>
+  <ion-toolbar no-border-top>
+    <ion-searchbar placeholder="Filter Items" (ionInput)="filterItems($event)"></ion-searchbar>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Filter Items with Cancel" showCancelButton color="danger" (ionInput)="filterItems($event)"></ion-searchbar>
+  <p padding-left padding-right>Searchbars can be placed in a toolbar or anywhere in the content.</p>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+</div-->
+</ion-content>
+<!--ion-footer>
+  <ion-toolbar color="danger">
+    <ion-searchbar placeholder="Search" (ionInput)="filterItems($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-footer-->
